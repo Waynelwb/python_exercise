@@ -1,4 +1,4 @@
-for _ in (0,1,2,3,4,5):
+for _ in (0, 1, 2, 3, 4, 5):
     print('hello world!')
 
 """
@@ -17,10 +17,13 @@ decimal.Decimal can only use decimal.Decimal or int
 # float数据类型可以作为函数调用——不指定参数时返回0.0
 # 下列函数用于比较floats是否相等
 import sys
+
+
 def equal_float(a, b):
     return abs(a - b) <= sys.float_info.epsilon
-print(equal_float(1, 2))
+# sys.float_info.epsilon是机器可以区分两个浮点数的最小区别
 
+print(equal_float(1, 2))
 """
 round() math.floor() math.ceil() float.is_integer() float.as_integer_ratio()
 使用float.hex()方法可以将浮点数以十六进制形式表示为字符串
@@ -29,4 +32,11 @@ round() math.floor() math.ceil() float.is_integer() float.as_integer_ratio()
 # math.hypot()用于计算原点到点的距离
 """
 复数：Literal复数在书写上使用+或-符号将实数部分和虚数部分结合起来（虚数部分使用字母j）
+复数的两个部分都以属性名的方式存在，分别是real和imag
+复数的conjugate()方法用于改变复数虚数部分的符号
+"""
+z = -89.5 + 2.125j
+print(z.real, z.imag)
+"""
+要计算复数需要导入cmath模块
 """
